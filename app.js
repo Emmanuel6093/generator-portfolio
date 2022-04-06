@@ -5,12 +5,28 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'name', 
-            message: 'What is your name?'
+            message: 'What is your name? (Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your name!');
+                    return false;
+                }
+            }
         },
         {
             type: 'input', 
             name: 'github',
-            message: 'Enter your GitHub Username'
+            message: 'Enter your GitHub Username',
+            validate: gitHubUser => {
+                if (gitHubUser) {
+                    return true;
+                } else {
+                    console.log('Please enter your username!');
+                    return false;
+                }
+            }
         }, 
         {
             type: 'input', 
@@ -37,12 +53,28 @@ const promptProject = portfolioData => {
             {
                 type: 'input',
                 name: 'name',
-                message: 'What is the name of your project?'
+                message: 'What is the name of your project? (Required)',
+                validate: projectNameInput => {
+                    if (projectNameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter your name!');
+                        return false;
+                    }
+                }
             }, 
             {
                 type: 'input', 
                 name: 'name', 
-                message: 'Provide a description of the project (Required)'
+                message: 'Provide a description of the project (Required)',
+                validate: projectDesc => {
+                    if (projectDesc) {
+                        return true;
+                    } else {
+                        console.log('Please enter your name!');
+                        return false;
+                    }
+                }
             }, 
             {
                 type: 'checkbox', 
